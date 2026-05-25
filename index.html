@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Workshop · Landing Page Layouts · BALANZI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif; background:#F4F2EE; color:#1C1C1C; -webkit-font-smoothing:antialiased; line-height:1.5}
+  img{max-width:100%; display:block}
+  .container{max-width:1280px; margin:0 auto; padding:0 32px}
+
+  header{padding:32px 0 24px}
+  header .row{display:flex; align-items:center; justify-content:space-between}
+  header img{height:18px; width:auto; opacity:0.92}
+  header .meta{font:500 italic 13px/1.4 Inter,sans-serif; color:#8A857E; text-align:right; max-width:240px}
+
+  .hero{padding:80px 0 64px}
+  .hero .eyebrow{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:32px}
+  .hero h1{font:800 clamp(48px, 6vw, 80px)/1.04 Inter,sans-serif; letter-spacing:-0.024em; color:#1C1C1C; margin-bottom:6px}
+  .hero h1 .italic{font:300 italic clamp(48px, 6vw, 80px)/1.04 Inter,sans-serif; color:#8A857E; display:block; letter-spacing:-0.018em}
+  .hero .lede{font:400 18px/1.6 Inter,sans-serif; color:#3D3833; max-width:680px; margin-top:36px}
+
+  .brief{padding:48px 0 96px; border-top:1px solid rgba(28,28,28,0.08); margin-top:64px}
+  .brief h2{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:24px; padding-top:48px}
+  .brief .col2{display:grid; grid-template-columns:1fr 1fr; gap:48px}
+  .brief p{font:400 16px/1.65 Inter,sans-serif; color:#1C1C1C; margin-bottom:18px}
+  .brief p strong{font-weight:700}
+  .brief ul{margin:8px 0 18px 0; padding-left:0; list-style:none}
+  .brief ul li{font:400 15px/1.6 Inter,sans-serif; color:#3D3833; padding:6px 0 6px 18px; position:relative}
+  .brief ul li::before{content:"·"; position:absolute; left:0; top:6px; font-weight:800; color:#8A857E; font-size:20px}
+
+  .picker{padding:80px 0 120px; border-top:1px solid rgba(28,28,28,0.08)}
+  .picker h2{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:14px; padding-top:8px}
+  .picker .picker-lede{font:400 18px/1.6 Inter,sans-serif; color:#1C1C1C; margin-bottom:56px; max-width:680px}
+  .picker .picker-lede em{font:300 italic 18px/1.6 Inter,sans-serif; color:#8A857E}
+
+  .layouts{display:grid; grid-template-columns:repeat(3, 1fr); gap:32px}
+  .layout-card{background:#FFFFFF; border:1px solid rgba(28,28,28,0.10); transition:all 0.2s}
+  .layout-card:hover{border-color:#1C1C1C; transform:translateY(-2px); box-shadow:0 14px 32px rgba(0,0,0,0.08)}
+  .layout-card a{display:block; text-decoration:none; color:inherit}
+  .layout-card .preview{aspect-ratio:4/3; background:#1C1C1C; overflow:hidden; position:relative}
+  .layout-card .preview img{width:100%; height:100%; object-fit:cover; opacity:0.85}
+  .layout-card .preview .label{position:absolute; top:18px; left:18px; font:700 10px/1 Inter,sans-serif; letter-spacing:0.28em; text-transform:uppercase; color:#F4F2EE; background:rgba(0,0,0,0.55); backdrop-filter:blur(8px); padding:8px 12px; border:1px solid rgba(255,255,255,0.22)}
+  .layout-card .body{padding:28px 28px 32px}
+  .layout-card .num{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:14px}
+  .layout-card h3{font:800 26px/1.15 Inter,sans-serif; letter-spacing:-0.018em; color:#1C1C1C; margin-bottom:4px}
+  .layout-card h3 .italic{font:300 italic 26px/1.15 Inter,sans-serif; color:#8A857E}
+  .layout-card .desc{font:400 14px/1.6 Inter,sans-serif; color:#3D3833; margin-top:18px; margin-bottom:24px}
+  .layout-card .features{margin-bottom:28px}
+  .layout-card .features div{font:400 13px/1.6 Inter,sans-serif; color:#5e554a; padding:4px 0 4px 16px; position:relative}
+  .layout-card .features div::before{content:"·"; position:absolute; left:0; top:0; font-weight:800; color:#8A857E; font-size:18px; line-height:1.4}
+  .layout-card .features div b{color:#1C1C1C; font-weight:600}
+  .layout-card .cta{display:inline-block; font:700 12px/1 Inter,sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#1C1C1C; border-bottom:1.5px solid #1C1C1C; padding-bottom:4px}
+
+  footer{padding:48px 0 60px; border-top:1px solid rgba(28,28,28,0.08)}
+  footer .row{display:flex; align-items:center; justify-content:space-between}
+  footer img{height:14px; width:auto; opacity:0.7}
+  footer .copy{font:400 12px/1 Inter,sans-serif; color:#8A857E; letter-spacing:0.02em}
+
+  @media (max-width:900px){
+    .layouts{grid-template-columns:1fr; gap:28px}
+    .brief .col2{grid-template-columns:1fr; gap:24px}
+  }
+  @media (max-width:600px){
+    .container{padding:0 22px}
+    .hero{padding:48px 0 32px}
+    .picker{padding:48px 0 80px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="row">
+      <img src="balanzi-assets/Logo assets/balanzi-london-wordmark-dark.png" alt="BALANZI · London"/>
+      <div class="meta">Layout preview · for Claude Design review</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">The Workshop · landing page</div>
+    <h1>Three layouts.<span class="italic">One conversion goal.</span></h1>
+    <p class="lede">A landing page for The Workshop — BALANZI's prospect community. The page captures an email; the invite arrives only by inbox (the FB group link is never on the page). Three structural directions below, each testing a different value proposition. Same brand voice. Same hard rule: anti-sales, signal-grounded, no fluff.</p>
+  </div>
+</section>
+
+<section class="brief">
+  <div class="container">
+    <h2>Brief · what to know before reviewing</h2>
+    <div class="col2">
+      <div>
+        <p><strong>What is The Workshop?</strong></p>
+        <p>The prospect community for BALANZI. A private channel from the two founders — the vision, decisions, mistakes, and the answers a careful buyer would want before purchasing. It's the anti-sales positioning of a brand community: not VIP, not perks, not influencer drops. Just the work.</p>
+
+        <p><strong>The conversion architecture</strong></p>
+        <ul>
+          <li>Page captures email only</li>
+          <li>Invite link arrives via email (not visible on the page)</li>
+          <li>This keeps the community small + protects the signal-to-noise ratio</li>
+          <li>Email becomes the first Workshop letter — Klaviyo welcome flow seeds the relationship</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Brand voice constraints</strong></p>
+        <ul>
+          <li>Calm, editorial, anti-sales — no urgency, no discount language</li>
+          <li>Self-Made Man audience (78% male, mean age 50, careful with money)</li>
+          <li>Signal-grounded copy only (verbatim quote / time-elapsed proof / specific provable claim / canonical brand line)</li>
+          <li>Italic accent on a separate line (font:300 italic, color #8A857E)</li>
+          <li>Palette: warm off-white #F4F2EE / deep ink #1C1C1C</li>
+          <li>Inter font only</li>
+          <li>Banned words: premium, luxury, exclusive, lifetime guarantee, won't fade</li>
+        </ul>
+
+        <p><strong>What's NOT in scope yet</strong></p>
+        <ul>
+          <li>Form submission backend (currently inert — wire to Klaviyo on selection)</li>
+          <li>Klaviyo welcome flow templates (separate workstream)</li>
+          <li>Mobile fine-tuning past 600px breakpoint</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="picker">
+  <div class="container">
+    <h2>The three layouts</h2>
+    <p class="picker-lede">Each tests a different conversion mechanism. <em>Open each in a new tab to scroll through the full page.</em></p>
+
+    <div class="layouts">
+
+      <div class="layout-card">
+        <a href="manifesto/">
+          <div class="preview">
+            <span class="label">Layout 01 · The Manifesto</span>
+            <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-busts-with-chains-and-open-box.jpg" alt="The Manifesto layout preview"/>
+          </div>
+          <div class="body">
+            <div class="num">Layout 01</div>
+            <h3>The Manifesto<span class="italic"> — editorial long-scroll</span></h3>
+            <div class="desc">A magazine-style declaration. Massive type-led hero, alternating image+text blocks, dark "what's inside" reverse section, calm bottom CTA. Best for brand-led traffic where mood does the work.</div>
+            <div class="features">
+              <div><b>Conversion mechanism:</b> brand belief → opt-in</div>
+              <div><b>Email form position:</b> bottom of scroll</div>
+              <div><b>Best for:</b> organic, social, footer links</div>
+              <div><b>Vibe:</b> editorial magazine, calm, premium-without-luxury</div>
+            </div>
+            <span class="cta">Open layout →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="layout-card">
+        <a href="samples/">
+          <div class="preview">
+            <span class="label">Layout 02 · The Index</span>
+            <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="The Index layout preview"/>
+          </div>
+          <div class="body">
+            <div class="num">Layout 02</div>
+            <h3>The Index<span class="italic"> — substance-driven, fast convert</span></h3>
+            <div class="desc">Split-screen hero with email form above the fold. Below: a 6-card grid showing the exact kind of content the community shares (prototype kills, supplier decisions, side-by-sides). Best for paid traffic where utility wins.</div>
+            <div class="features">
+              <div><b>Conversion mechanism:</b> content sample → opt-in</div>
+              <div><b>Email form position:</b> hero (above fold) + repeated bottom</div>
+              <div><b>Best for:</b> Meta ads, paid social, retargeting</div>
+              <div><b>Vibe:</b> editorial-utility, content-led, fast scan</div>
+            </div>
+            <span class="cta">Open layout →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="layout-card">
+        <a href="letter/">
+          <div class="preview">
+            <span class="label">Layout 03 · The Letter</span>
+            <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-bracelets-on-laptop-with-box.jpg" alt="The Letter layout preview"/>
+          </div>
+          <div class="body">
+            <div class="num">Layout 03</div>
+            <h3>The Letter<span class="italic"> — founder direct, intimate</span></h3>
+            <div class="desc">A literal open letter from the founders. Single column, max-width 680px, intimate scroll. Reads like a hand-typed invitation. Best for warm traffic, customer footer, and the brand bio CTA.</div>
+            <div class="features">
+              <div><b>Conversion mechanism:</b> personal trust → opt-in</div>
+              <div><b>Email form position:</b> after the letter</div>
+              <div><b>Best for:</b> customer base, organic referrals, social bio</div>
+              <div><b>Vibe:</b> personal, hand-written feel, slow + intentional</div>
+            </div>
+            <span class="cta">Open layout →</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <img src="balanzi-assets/Logo assets/balanzi-london-wordmark-dark.png" alt="BALANZI · London"/>
+      <div class="copy">© 2026 BALANZI · The Workshop · LP preview</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

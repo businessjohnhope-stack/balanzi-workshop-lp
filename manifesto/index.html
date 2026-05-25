@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Workshop · BALANZI</title>
+<meta name="description" content="From the BALANZI founders. The vision, decisions, mistakes, and the answers you'd want before buying." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif; background:#F4F2EE; color:#1C1C1C; line-height:1.5; -webkit-font-smoothing:antialiased}
+  img{max-width:100%; display:block}
+  .container{max-width:1200px; margin:0 auto; padding:0 32px}
+
+  /* HEADER */
+  header{padding:28px 0; border-bottom:1px solid rgba(28,28,28,0.08)}
+  header .row{display:flex; align-items:center; justify-content:space-between}
+  header img{height:18px; width:auto; opacity:0.92}
+  header .eyebrow{font:700 10px/1 Inter,sans-serif; letter-spacing:0.22em; text-transform:uppercase; color:#8A857E}
+
+  /* HERO */
+  .hero{padding:120px 0 100px; text-align:center}
+  .hero .eyebrow{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:36px}
+  .hero h1{font:800 clamp(72px, 14vw, 168px)/0.94 Inter,sans-serif; letter-spacing:-0.028em; color:#1C1C1C; margin-bottom:8px}
+  .hero h1 .italic{font:300 italic clamp(72px, 14vw, 168px)/0.94 Inter,sans-serif; letter-spacing:-0.020em; color:#8A857E; display:block; margin-top:-4px}
+  .hero .lede{font:400 clamp(18px, 2.2vw, 22px)/1.55 Inter,sans-serif; color:#3D3833; max-width:620px; margin:48px auto 0}
+  .hero .scroll-cue{margin-top:80px; font:500 italic 13px/1 Inter,sans-serif; color:#8A857E; letter-spacing:0.04em}
+
+  /* MANIFESTO BLOCKS */
+  .manifesto{padding:100px 0; border-top:1px solid rgba(28,28,28,0.08)}
+  .manifesto .row{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start}
+  .manifesto .row.reverse{direction:rtl}
+  .manifesto .row.reverse > *{direction:ltr}
+  .manifesto .col-img{aspect-ratio:4/5; overflow:hidden; background:#1C1C1C}
+  .manifesto .col-img img{width:100%; height:100%; object-fit:cover}
+  .manifesto .col-text .num{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:24px}
+  .manifesto .col-text h2{font:800 clamp(32px, 4vw, 48px)/1.05 Inter,sans-serif; letter-spacing:-0.024em; color:#1C1C1C; margin-bottom:8px}
+  .manifesto .col-text h2 .italic{font:300 italic clamp(32px, 4vw, 48px)/1.05 Inter,sans-serif; color:#8A857E; display:block; letter-spacing:-0.016em}
+  .manifesto .col-text p{font:400 17px/1.65 Inter,sans-serif; color:#3D3833; margin-top:32px; max-width:480px}
+  .manifesto .col-text .pull{font:300 italic 22px/1.5 Inter,sans-serif; color:#1C1C1C; border-left:2px solid #1C1C1C; padding-left:24px; margin-top:36px; max-width:440px}
+
+  /* WHAT'S INSIDE */
+  .inside{padding:120px 0; background:#1C1C1C; color:#F4F2EE; text-align:center}
+  .inside .eyebrow{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:rgba(244,242,238,0.55); margin-bottom:32px}
+  .inside h2{font:800 clamp(40px, 6vw, 72px)/1.02 Inter,sans-serif; letter-spacing:-0.024em; margin-bottom:6px}
+  .inside h2 .italic{font:300 italic clamp(40px, 6vw, 72px)/1.02 Inter,sans-serif; color:rgba(244,242,238,0.55); display:block; letter-spacing:-0.016em}
+  .inside .list{max-width:680px; margin:64px auto 0; text-align:left}
+  .inside .list li{list-style:none; padding:28px 0; border-bottom:1px solid rgba(244,242,238,0.10); font:400 19px/1.55 Inter,sans-serif; color:#F4F2EE; display:flex; gap:20px; align-items:baseline}
+  .inside .list li::before{content:""; flex-shrink:0; width:6px; height:6px; background:#F4F2EE; border-radius:50%; margin-top:10px}
+  .inside .list li em{font:300 italic 19px/1.55 Inter,sans-serif; color:rgba(244,242,238,0.65)}
+
+  /* INVITE */
+  .invite{padding:140px 0; text-align:center}
+  .invite .eyebrow{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:32px}
+  .invite h2{font:800 clamp(48px, 8vw, 96px)/0.98 Inter,sans-serif; letter-spacing:-0.026em; margin-bottom:8px}
+  .invite h2 .italic{font:300 italic clamp(48px, 8vw, 96px)/0.98 Inter,sans-serif; color:#8A857E; display:block; letter-spacing:-0.018em}
+  .invite .lede{font:400 18px/1.55 Inter,sans-serif; color:#3D3833; max-width:520px; margin:40px auto 56px}
+  form.signup{max-width:480px; margin:0 auto}
+  form.signup .caption{font:500 italic 13px/1.5 Inter,sans-serif; color:#8A857E; margin-bottom:14px}
+  form.signup .field{display:flex; gap:0; border:1px solid #1C1C1C; background:#F4F2EE}
+  form.signup input[type=email]{flex:1; padding:18px 22px; font:400 16px Inter,sans-serif; color:#1C1C1C; background:transparent; border:none; outline:none}
+  form.signup input[type=email]::placeholder{color:#8A857E}
+  form.signup button{padding:18px 36px; font:700 13px/1 Inter,sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#F4F2EE; background:#1C1C1C; border:none; cursor:pointer; transition:opacity 0.15s}
+  form.signup button:hover{opacity:0.85}
+  form.signup .footnote{font:400 13px/1.55 Inter,sans-serif; color:#8A857E; margin-top:18px}
+
+  /* FOOTER */
+  footer{padding:48px 0 60px; border-top:1px solid rgba(28,28,28,0.08)}
+  footer .row{display:flex; align-items:center; justify-content:space-between}
+  footer img{height:14px; width:auto; opacity:0.7}
+  footer .copy{font:400 12px/1 Inter,sans-serif; color:#8A857E; letter-spacing:0.02em}
+
+  /* RESPONSIVE */
+  @media (max-width:760px){
+    .container{padding:0 22px}
+    .hero{padding:80px 0 60px}
+    .manifesto{padding:64px 0}
+    .manifesto .row{grid-template-columns:1fr; gap:36px}
+    .manifesto .row.reverse{direction:ltr}
+    .inside{padding:80px 0}
+    .invite{padding:90px 0}
+    form.signup .field{flex-direction:column}
+    form.signup button{padding:18px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="row">
+      <img src="../balanzi-assets/Logo assets/balanzi-london-wordmark-dark.png" alt="BALANZI · London"/>
+      <div class="eyebrow">The Workshop</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">From BALANZI</div>
+    <h1>The Workshop.<span class="italic">A quieter place.</span></h1>
+    <p class="lede">A private channel from the BALANZI founders — open to anyone who asks for the invite. The vision, the decisions, the mistakes, the answers you'd want before buying.</p>
+    <p class="scroll-cue">↓ what's inside</p>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="container">
+    <div class="row">
+      <div class="col-img">
+        <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="Chain in hand · BALANZI"/>
+      </div>
+      <div class="col-text">
+        <div class="num">01 · The Vision</div>
+        <h2>What we're<span class="italic">actually building.</span></h2>
+        <p>Not a fine-jewelry house. Not a hype brand. A workshop — distributed across two founders, a factory, and a few hundred decisions a month. The Workshop is where we share what we'd tell a friend before he picks his first chain.</p>
+        <blockquote class="pull">"Nobody has innovated in stainless steel. That's what we're trying to change." — Josef</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" style="border-top:none; padding-top:0">
+  <div class="container">
+    <div class="row reverse">
+      <div class="col-img">
+        <img src="../balanzi-assets/product close-ups/Polished/polished-gold-chain-clasp-detail-macro.jpg" alt="Clasp macro · BALANZI"/>
+      </div>
+      <div class="col-text">
+        <div class="num">02 · The Decisions</div>
+        <h2>The chains we ship<span class="italic">and the ones we killed.</span></h2>
+        <p>The prototype we walked away from at 80%. The clasp that failed inspection. The supplier we stopped working with after a six-month trial. We share the call we made, what it cost us, and what we'd do differently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" style="border-top:none; padding-top:0">
+  <div class="container">
+    <div class="row">
+      <div class="col-img">
+        <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-bracelets-on-laptop-with-box.jpg" alt="Bracelets mid-work · BALANZI"/>
+      </div>
+      <div class="col-text">
+        <div class="num">03 · The Mistakes</div>
+        <h2>What we got wrong,<span class="italic">said plainly.</span></h2>
+        <p>Fourteen people told us our chains were fake last month. We still don't care — but we listened to what was underneath the question. We share the friction, the bad reviews, the inspection failures. Not as crisis comms. As craft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="container">
+    <div class="eyebrow">What you'll actually receive</div>
+    <h2>~1 letter a week.<span class="italic">From the work.</span></h2>
+    <ul class="list">
+      <li>The chain we're testing this month, and what failed last month. <em>— prototypes, kills, what changed.</em></li>
+      <li>The decision logs — sourcing, sampling, packaging revisions. <em>— what we picked and why.</em></li>
+      <li>Customer questions answered directly by us, not customer service. <em>— before-purchase questions, not after.</em></li>
+      <li>The factory floor where it's made. The conversations that happen there. <em>— with photos, when there's something worth showing.</em></li>
+      <li>Reading recs, music we play while we work, the rare opinion you didn't ask for. <em>— sparingly. you're not here for that.</em></li>
+    </ul>
+  </div>
+</section>
+
+<section class="invite" id="join">
+  <div class="container">
+    <div class="eyebrow">Step inside</div>
+    <h2>Bring your email.<span class="italic">We'll send the invite.</span></h2>
+    <p class="lede">The Workshop is closed by default. The invite goes only to your inbox — that's how we keep it small, useful, and worth being in.</p>
+    <form class="signup" action="#" method="POST" onsubmit="return false;">
+      <div class="caption">Free. ~1 email a week. Unsubscribe anytime.</div>
+      <div class="field">
+        <input type="email" placeholder="your@email" required />
+        <button type="submit">Send the invite</button>
+      </div>
+      <div class="footnote">We won't share your email. We won't sell anything in The Workshop. The invite is private — please don't forward it.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <img src="../balanzi-assets/Logo assets/balanzi-london-wordmark-dark.png" alt="BALANZI · London"/>
+      <div class="copy">© 2026 BALANZI · The Workshop</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
