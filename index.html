@@ -15,45 +15,39 @@
   a{color:inherit; text-decoration:none}
   .page{min-height:100vh; background:#FFFFFF; max-width:480px; margin:0 auto}
 
-  /* HERO */
-  .hero{padding:48px 20px 32px}
-  .hero .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:14px}
-  .hero h1{font-size:34px; font-weight:800; line-height:1.05; color:#1C1C1C; letter-spacing:-0.025em; margin:0}
+  .ribbon{padding:14px 20px; background:#1C1C1C; display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .ribbon .name{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#FFFFFF}
+  .ribbon .from{font-size:10px; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.5)}
+
+  .hero{padding:36px 20px 28px}
+  .hero .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:14px}
+  .hero h1{font-size:30px; font-weight:800; line-height:1.08; color:#1C1C1C; letter-spacing:-0.022em; margin:0}
   .hero h1 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; margin-top:3px}
-  .hero .lede{margin-top:20px; font-size:14px; color:#6B6560; line-height:1.7}
+  .hero .lede{margin-top:18px; font-size:14px; color:#6B6560; line-height:1.7}
   .hero .lede strong{color:#1C1C1C; font-weight:700}
 
-  /* SECTION */
-  .section{padding:24px 20px; border-top:1px solid #E8E3DC}
-  .section .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:14px}
-  .section h2{font-size:19px; font-weight:800; color:#1C1C1C; line-height:1.2; margin:0 0 12px; letter-spacing:-0.01em}
+  .section{padding:22px 20px; border-top:1px solid #E8E3DC}
+  .section .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:12px}
+  .section h2{font-size:18px; font-weight:800; color:#1C1C1C; line-height:1.2; margin:0 0 12px; letter-spacing:-0.012em}
   .section .body{font-size:14px; line-height:1.78; color:#6B6560}
-  .section .body p{margin:0}
   .section .body p + p{margin-top:13px}
   .section .body strong{color:#1C1C1C; font-weight:700}
 
-  /* LAYOUT PICKER CARDS */
-  .layout-card{position:relative; overflow:hidden; border-bottom:1px solid #E8E3DC}
+  .layout-card{border-bottom:1px solid #E8E3DC}
   .layout-card a{display:block; color:inherit; text-decoration:none}
-  .layout-card .num{font-size:96px; font-weight:900; color:#F5F5F5; line-height:1; letter-spacing:-0.04em; position:absolute; top:-8px; right:-4px; pointer-events:none}
   .layout-card .preview{aspect-ratio:16/10; overflow:hidden; background:#1C1C1C; position:relative}
   .layout-card .preview img{width:100%; height:100%; object-fit:cover; opacity:0.85}
-  .layout-card .preview .label{position:absolute; top:14px; left:14px; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.7); background:rgba(0,0,0,0.55); padding:6px 10px}
-  .layout-card .inner{padding:24px 20px 28px; position:relative; z-index:1}
-  .layout-card .tag{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:10px}
-  .layout-card h3{font-size:23px; font-weight:800; color:#1C1C1C; line-height:1.1; margin:0 0 6px; letter-spacing:-0.01em}
-  .layout-card h3 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:22px; margin-top:3px}
-  .layout-card .desc{font-size:14px; line-height:1.78; color:#6B6560; margin-top:14px}
+  .layout-card .preview .label{position:absolute; bottom:14px; left:14px; font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#FFFFFF; background:rgba(0,0,0,0.55); backdrop-filter:blur(8px); padding:8px 12px; border:1px solid rgba(255,255,255,0.2)}
+  .layout-card .inner{padding:22px 20px 26px}
+  .layout-card .tag{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:10px}
+  .layout-card h3{font-size:22px; font-weight:800; color:#1C1C1C; line-height:1.15; margin:0 0 6px; letter-spacing:-0.012em}
+  .layout-card h3 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:21px; margin-top:3px}
+  .layout-card .desc{font-size:14px; line-height:1.75; color:#6B6560; margin-top:14px}
   .layout-card .desc strong{color:#1C1C1C; font-weight:700}
-  .layout-card .features{margin-top:14px; padding-top:14px; border-top:1px solid #E8E3DC}
-  .layout-card .features div{font-size:13px; line-height:1.6; color:#6B6560; padding:4px 0 4px 16px; position:relative}
-  .layout-card .features div::before{content:""; position:absolute; left:0; top:11px; width:8px; height:1px; background:#1C1C1C}
-  .layout-card .features div b{color:#1C1C1C; font-weight:700}
-  .layout-card .open{display:inline-block; margin-top:18px; background:#1C1C1C; color:#FFFFFF; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:13px 22px; text-decoration:none}
+  .layout-card .open{display:inline-block; margin-top:18px; background:#1C1C1C; color:#FFFFFF; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:14px 22px; text-decoration:none}
 
-  /* FOOTER */
-  .footer{padding:28px 20px 36px; border-top:3px solid #1C1C1C}
-  .footer .copy{font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA}
+  .footer{padding:24px 20px 32px; border-top:3px solid #1C1C1C}
+  .footer .copy{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA}
 
   @media (max-width:480px){
     .page{max-width:100%}
@@ -63,18 +57,23 @@
 <body>
 <div class="page">
 
+  <div class="ribbon">
+    <div class="name">The Workshop · LP review</div>
+    <div class="from">From BALANZI</div>
+  </div>
+
   <div class="hero">
-    <div class="eyebrow">The Workshop · LP review</div>
+    <div class="eyebrow">For Claude Design</div>
     <h1>Three layouts.<span class="italic">One conversion goal.</span></h1>
-    <div class="lede">A landing page for The Workshop — BALANZI's prospect community. The page captures an email; <strong>the invite arrives only by inbox</strong>. Three structural directions, all in the balanzi.com design system. Same brand voice. Same hard rule: anti-sales, signal-grounded, no fluff.</div>
+    <div class="lede">A landing page for The Workshop — BALANZI's prospect community. The page captures an email; <strong>the invite arrives only by inbox</strong>. Three structural directions, all in the balanzi.com design system.</div>
   </div>
 
   <div class="section">
-    <div class="eyebrow">Brief · what to know</div>
+    <div class="eyebrow">Brief</div>
     <h2>What is The Workshop?</h2>
     <div class="body">
-      <p>The prospect community for BALANZI. <strong>A private channel from the founders</strong> — the vision, decisions, mistakes, and the answers a careful buyer would want before purchasing. It's the anti-sales positioning of a brand community: not VIP, not perks, not influencer drops. Just the work.</p>
-      <p><strong>The conversion architecture:</strong> Page captures email only. Invite arrives via email (not visible on the page). Keeps the community small + protects the signal-to-noise ratio. Email becomes the first Workshop letter — Klaviyo welcome flow seeds the relationship.</p>
+      <p>The prospect community for BALANZI. <strong>A private channel from the founders</strong> — the vision, decisions, mistakes, and the answers a careful buyer would want before purchasing. Not VIP. Not perks. Just the work.</p>
+      <p><strong>Architecture:</strong> page captures email only · invite link arrives via Klaviyo welcome flow · FB group link never on the page · keeps the community small + protects signal-to-noise.</p>
     </div>
   </div>
 
@@ -82,27 +81,21 @@
     <div class="eyebrow">Design language</div>
     <h2>Matches balanzi.com</h2>
     <div class="body">
-      <p>Same design system as <strong>balanzi.com/our-story</strong>: 480px max-width single column, white background, numbered sections with massive bg numerals, italic-on-separate-line headlines, dark voice sections breaking up the white. Inter font only. Hex palette: <strong>#FFFFFF / #1C1C1C / #6B6560 / #E8E3DC / #F5F5F5 / #AAAAAA</strong>.</p>
+      <p>Same system as <strong>balanzi.com/our-story</strong>: 480px max-width single column, white background, italic-on-separate-line headlines, dark voice sections breaking up the white. Inter only. Hex palette: <strong>#FFFFFF / #1C1C1C / #6B6560 / #E8E3DC / #AAAAAA</strong>. No numbered sections — kept clean, not editorial-heavy.</p>
     </div>
   </div>
 
   <!-- LAYOUT 1 -->
   <div class="layout-card">
-    <div class="num">01</div>
     <a href="manifesto/">
       <div class="preview">
-        <span class="label">Layout 01 · The Manifesto</span>
+        <span class="label">The Manifesto</span>
         <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-busts-with-chains-and-open-box.jpg" alt="Manifesto layout preview"/>
       </div>
       <div class="inner">
         <div class="tag">Story-page style</div>
         <h3>The Manifesto<span class="italic">— editorial long-scroll</span></h3>
-        <div class="desc">Direct echo of <strong>balanzi.com/our-story</strong>. Dark image hero, numbered sections (01, 02), dark voice/quote break, image-led-to-dark "mission" section (03), stats, signup-as-guarantee-box, bottom CTA. <strong>Best for brand-led traffic.</strong></div>
-        <div class="features">
-          <div><b>Conversion mechanism:</b> brand belief → opt-in</div>
-          <div><b>Email form position:</b> bottom (in guarantee-style block)</div>
-          <div><b>Best for:</b> organic, social, footer links</div>
-        </div>
+        <div class="desc">Image hero with Workshop badge + voice/quote break + image-text sections. <strong>Best for brand-led traffic</strong> — organic, social, footer links. Email form at bottom in a guarantee-style block.</div>
         <span class="open">Open layout →</span>
       </div>
     </a>
@@ -110,21 +103,15 @@
 
   <!-- LAYOUT 2 -->
   <div class="layout-card">
-    <div class="num">02</div>
     <a href="samples/">
       <div class="preview">
-        <span class="label">Layout 02 · The Index</span>
-        <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="Index layout preview"/>
+        <span class="label">The Samples</span>
+        <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="Samples layout preview"/>
       </div>
       <div class="inner">
         <div class="tag">Substance-driven</div>
-        <h3>The Index<span class="italic">— samples-led, fast convert</span></h3>
-        <div class="desc">Dark image hero → <strong>email signup bar above the fold</strong> (in a dark band) → six numbered samples showing the exact kind of content the community shares (prototype kills, supplier decisions, side-by-sides, Q&amp;A, factory). Voice break in the middle. Signup repeat + bottom CTA. <strong>Best for paid traffic.</strong></div>
-        <div class="features">
-          <div><b>Conversion mechanism:</b> content sample → opt-in</div>
-          <div><b>Email form position:</b> hero band (above fold) + repeated bottom</div>
-          <div><b>Best for:</b> Meta ads, paid social, retargeting</div>
-        </div>
+        <h3>The Samples<span class="italic">— content-led, fast convert</span></h3>
+        <div class="desc">Hero → <strong>signup bar above the fold</strong> (dark band) → six sample cards showing the exact kind of content the community shares. <strong>Best for paid traffic</strong> — Meta ads, paid social, retargeting.</div>
         <span class="open">Open layout →</span>
       </div>
     </a>
@@ -132,21 +119,15 @@
 
   <!-- LAYOUT 3 -->
   <div class="layout-card">
-    <div class="num">03</div>
     <a href="letter/">
       <div class="preview">
-        <span class="label">Layout 03 · The Letter</span>
+        <span class="label">The Letter</span>
         <img src="balanzi-assets/BALANZI - Behind The Scenes/bts-bracelets-on-laptop-with-box.jpg" alt="Letter layout preview"/>
       </div>
       <div class="inner">
         <div class="tag">Founder direct</div>
         <h3>The Letter<span class="italic">— intimate, personal</span></h3>
-        <div class="desc">A literal open letter from the founders. <strong>Single-flow body</strong>, inline figure with caption, specifics list, sign-off ("The BALANZI founders · London · the desk · the factory"), voice break, signup, bottom CTA. <strong>Best for warm traffic.</strong></div>
-        <div class="features">
-          <div><b>Conversion mechanism:</b> personal trust → opt-in</div>
-          <div><b>Email form position:</b> after the letter</div>
-          <div><b>Best for:</b> customer base, organic referrals, social bio</div>
-        </div>
+        <div class="desc">A literal open letter from the founders. <strong>Single-flow body</strong>, inline figure with caption, clean specifics list, sign-off, voice break, signup. <strong>Best for warm traffic</strong> — customer base, organic referrals, social bio.</div>
         <span class="open">Open layout →</span>
       </div>
     </a>

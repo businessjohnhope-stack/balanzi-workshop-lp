@@ -16,84 +16,70 @@
   a{color:inherit}
   .page{min-height:100vh; background:#FFFFFF; max-width:480px; margin:0 auto}
 
-  /* HERO */
-  .hero{position:relative; height:380px; overflow:hidden}
-  .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:70% center}
-  .hero .gradient{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(28,28,28,0.10) 0%, rgba(28,28,28,0.30) 40%, rgba(28,28,28,0.82) 70%, rgba(28,28,28,0.92) 100%)}
-  .hero .content{position:absolute; bottom:0; left:0; right:0; padding:28px 20px}
-  .hero .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:14px}
-  .hero h1{font-size:38px; font-weight:800; line-height:1.05; color:#FFFFFF; letter-spacing:-0.025em; margin:0}
-  .hero h1 .italic{display:block; font-weight:300; font-style:italic; color:rgba(255,255,255,0.5); margin-top:3px; font-size:38px}
-  .hero .lede{margin-top:16px; font-size:14px; color:rgba(255,255,255,0.55); line-height:1.65; padding-top:16px; border-top:1px solid rgba(255,255,255,0.10)}
+  /* TOP RIBBON — workshop branding always visible */
+  .ribbon{padding:14px 20px; background:#1C1C1C; display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .ribbon .name{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#FFFFFF}
+  .ribbon .from{font-size:10px; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.5)}
 
-  /* NUMBERED SECTION */
-  .section{border-bottom:1px solid #E8E3DC; position:relative; overflow:hidden}
-  .section .num{font-size:96px; font-weight:900; color:#F5F5F5; line-height:1; letter-spacing:-0.04em; position:absolute; top:-8px; right:-4px; pointer-events:none}
-  .section .inner{padding:28px 20px; position:relative; z-index:1}
+  /* HERO — image stays visible (gradient only at bottom) */
+  .hero{position:relative; height:440px; overflow:hidden}
+  .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 40%}
+  .hero .gradient{position:absolute; inset:0; background:linear-gradient(to bottom, transparent 0%, transparent 48%, rgba(28,28,28,0.55) 72%, rgba(28,28,28,0.92) 100%)}
+  .hero .badge{position:absolute; top:18px; left:18px; font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#FFFFFF; background:rgba(0,0,0,0.55); backdrop-filter:blur(8px); padding:8px 12px; border:1px solid rgba(255,255,255,0.2)}
+  .hero .content{position:absolute; bottom:0; left:0; right:0; padding:24px 20px}
+  .hero .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:12px}
+  .hero h1{font-size:34px; font-weight:800; line-height:1.05; color:#FFFFFF; letter-spacing:-0.022em; margin:0}
+  .hero h1 .italic{display:block; font-weight:300; font-style:italic; color:rgba(255,255,255,0.6); margin-top:4px; font-size:32px}
+
+  /* INTRO BODY (below hero, with subtle stripe) */
+  .lede-block{padding:24px 20px 28px; border-bottom:1px solid #E8E3DC}
+  .lede-block .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:10px}
+  .lede-block .lede{font-size:15px; line-height:1.7; color:#1C1C1C; font-weight:500}
+  .lede-block .lede em{font-weight:300; font-style:italic; color:#6B6560}
+
+  /* SECTION (no numbers) */
+  .section{padding:28px 20px; border-bottom:1px solid #E8E3DC}
   .section .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:12px}
-  .section h2{font-size:23px; font-weight:800; color:#1C1C1C; line-height:1.1; margin:0 0 16px; letter-spacing:-0.01em}
-  .section h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:22px; margin-top:3px}
+  .section h2{font-size:22px; font-weight:800; color:#1C1C1C; line-height:1.15; margin:0 0 16px; letter-spacing:-0.012em}
+  .section h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:21px; margin-top:3px}
   .section .body{font-size:14px; line-height:1.78; color:#6B6560}
   .section .body p{margin:0}
   .section .body p + p{margin-top:13px}
   .section .body strong{color:#1C1C1C; font-weight:700}
 
-  /* VOICE / QUOTE — dark */
+  /* SECTION + INLINE IMAGE (alternates with text rows) */
+  .section.with-image .figure{margin:0 -20px 18px; overflow:hidden; background:#1C1C1C}
+  .section.with-image .figure img{width:100%; aspect-ratio:16/10; object-fit:cover; display:block}
+  .section.with-image .figure .cap{padding:10px 20px 12px; font-size:11px; line-height:1.5; color:#AAAAAA; background:#F5F5F5; border-bottom:1px solid #E8E3DC; font-style:italic; font-weight:500}
+
+  /* VOICE — dark quote section */
   .voice{background:#1C1C1C; padding:28px 20px; border-bottom:1px solid rgba(255,255,255,0.06); position:relative; overflow:hidden}
-  .voice .quote-mark{position:absolute; top:-20px; left:8px; font-size:130px; font-weight:900; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none}
-  .voice .quote{font-size:18px; font-weight:700; color:#FFFFFF; line-height:1.4; position:relative; z-index:1}
-  .voice .sub{margin-top:4px; font-size:14px; color:#666666; line-height:1.4; position:relative; z-index:1}
-  .voice .attrib{margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#666666; position:relative; z-index:1}
+  .voice .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:14px}
+  .voice .quote{font-size:19px; font-weight:700; color:#FFFFFF; line-height:1.4}
+  .voice .sub{margin-top:6px; font-size:14px; color:#888; line-height:1.5}
+  .voice .attrib{margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1); font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#888}
 
-  /* MISSION (image-led-to-dark) */
-  .mission{position:relative; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.06)}
-  .mission .image{position:absolute; top:0; left:0; right:0; height:55%; overflow:hidden}
-  .mission .image img{width:100%; height:100%; object-fit:cover; object-position:top}
-  .mission .image-fade{position:absolute; bottom:0; left:0; right:0; height:60%; background:linear-gradient(to bottom, transparent, #1C1C1C)}
-  .mission .dark{position:absolute; top:45%; left:0; right:0; bottom:0; background:#1C1C1C}
-  .mission .inner{position:relative; z-index:1; padding:220px 20px 28px}
-  .mission .num{font-size:96px; font-weight:900; color:rgba(255,255,255,0.03); line-height:1; letter-spacing:-0.04em; position:absolute; top:168px; right:-4px; pointer-events:none}
-  .mission .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#666666; margin-bottom:12px}
-  .mission h2{font-size:23px; font-weight:800; color:#FFFFFF; line-height:1.1; margin:0 0 6px; letter-spacing:-0.01em}
-  .mission h2 .italic{display:block; font-weight:300; font-style:italic; color:#666666; margin-top:3px; font-size:22px}
-  .mission .standfirst{font-size:14px; font-weight:600; color:#FFFFFF; line-height:1.45; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.08)}
-  .mission .body{font-size:14px; line-height:1.78; color:#666666}
-  .mission .body p{margin:0}
-  .mission .body p + p{margin-top:13px}
-  .mission .body strong{color:#FFFFFF; font-weight:700}
-
-  /* STATS */
-  .stats{padding:28px 20px; border-bottom:1px solid #E8E3DC; background:#F5F5F5}
-  .stats .big{font-size:54px; font-weight:800; color:#1C1C1C; line-height:1; letter-spacing:-0.025em}
-  .stats .sub{font-size:14px; color:#6B6560; margin-top:8px; line-height:1.55}
-  .stats .sub strong{color:#1C1C1C; font-weight:700}
-  .stats .row{display:flex; margin-top:16px; border-top:1px solid #E8E3DC; padding-top:14px}
-  .stats .row .col{flex:1}
-  .stats .row .col + .col{padding-left:14px; margin-left:14px; border-left:1px solid #E8E3DC}
-  .stats .row .num{font-size:15px; font-weight:800; color:#1C1C1C; display:block}
-  .stats .row .lbl{font-size:8px; font-weight:600; letter-spacing:0.10em; text-transform:uppercase; color:#AAAAAA; display:block; margin-top:2px}
-
-  /* GUARANTEE-STYLE EMAIL BLOCK */
-  .signup{padding:26px 20px; border-bottom:1px solid #E8E3DC; border-left:3px solid #1C1C1C}
-  .signup .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:10px}
-  .signup h2{font-size:19px; font-weight:800; color:#1C1C1C; line-height:1.2; margin:0 0 12px; letter-spacing:-0.01em}
-  .signup h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; margin-top:2px; font-size:18px}
+  /* SIGNUP */
+  .signup{padding:28px 20px; border-bottom:1px solid #E8E3DC; border-left:3px solid #1C1C1C; background:#FAFAFA}
+  .signup .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#1C1C1C; margin-bottom:12px}
+  .signup h2{font-size:22px; font-weight:800; color:#1C1C1C; line-height:1.15; margin:0 0 14px; letter-spacing:-0.012em}
+  .signup h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; margin-top:3px; font-size:21px}
   .signup .body{font-size:14px; line-height:1.7; color:#6B6560; margin-bottom:18px}
   .signup .body strong{color:#1C1C1C; font-weight:700}
   .signup form{margin-top:6px}
   .signup .field{display:flex; border:1px solid #1C1C1C; background:#FFFFFF}
-  .signup .field input{flex:1; padding:13px 14px; font:400 14px/1 'Inter',sans-serif; color:#1C1C1C; background:transparent; border:none; outline:none}
+  .signup .field input{flex:1; padding:14px 14px; font:400 14px/1 'Inter',sans-serif; color:#1C1C1C; background:transparent; border:none; outline:none}
   .signup .field input::placeholder{color:#AAAAAA}
-  .signup .field button{padding:13px 18px; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#FFFFFF; background:#1C1C1C; border:none; cursor:pointer}
+  .signup .field button{padding:14px 18px; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#FFFFFF; background:#1C1C1C; border:none; cursor:pointer; font-family:inherit}
   .signup .micro{margin-top:10px; font-size:11px; line-height:1.5; color:#AAAAAA}
 
   /* BOTTOM CTA */
-  .bottom{padding:28px 20px 36px; border-top:3px solid #1C1C1C}
-  .bottom h2{font-size:30px; font-weight:900; color:#1C1C1C; line-height:1; margin:0 0 10px; letter-spacing:-0.025em}
-  .bottom h2 span{display:block}
+  .bottom{padding:32px 20px 40px; border-top:3px solid #1C1C1C}
+  .bottom .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:14px}
+  .bottom h2{font-size:30px; font-weight:900; color:#1C1C1C; line-height:1; margin:0 0 12px; letter-spacing:-0.025em}
   .bottom h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA}
-  .bottom .body{font-size:14px; color:#6B6560; margin-bottom:20px; line-height:1.65}
-  .bottom .cta{display:inline-block; background:#1C1C1C; color:#FFFFFF; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:13px 22px; text-decoration:none; border:none; cursor:pointer; font-family:inherit}
+  .bottom .body{font-size:14px; color:#6B6560; margin-bottom:22px; line-height:1.65}
+  .bottom .cta{display:inline-block; background:#1C1C1C; color:#FFFFFF; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:14px 22px; text-decoration:none; border:none; cursor:pointer; font-family:inherit}
 
   @media (max-width:480px){
     .page{max-width:100%}
@@ -103,84 +89,73 @@
 <body>
 <div class="page">
 
-  <!-- HERO -->
+  <!-- TOP RIBBON -->
+  <div class="ribbon">
+    <div class="name">The Workshop</div>
+    <div class="from">From BALANZI</div>
+  </div>
+
+  <!-- HERO — image stays visible -->
   <div class="hero">
     <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-busts-with-chains-and-open-box.jpg" alt="The Workshop · BALANZI"/>
     <div class="gradient"></div>
+    <div class="badge">The Workshop · Private</div>
     <div class="content">
-      <div class="eyebrow">From BALANZI</div>
+      <div class="eyebrow">From the BALANZI founders</div>
       <h1>We don't sell here.<span class="italic">We share what we're working on.</span></h1>
-      <div class="lede">A private channel from the founders. The vision, decisions, mistakes, and the answers you'd want before buying.</div>
     </div>
   </div>
 
-  <!-- 01 -->
+  <!-- LEDE BLOCK -->
+  <div class="lede-block">
+    <div class="eyebrow">A quieter channel</div>
+    <div class="lede">A private channel from the BALANZI founders. The vision, decisions, mistakes, and the answers you'd want before buying. <em>~1 letter a week. Inbox only.</em></div>
+  </div>
+
+  <!-- WHAT IT IS -->
   <div class="section">
-    <div class="num">01</div>
-    <div class="inner">
-      <div class="eyebrow">What it is</div>
-      <h2>Not a brand newsletter.<span class="italic">A different kind of channel.</span></h2>
-      <div class="body">
-        <p>Most brands send you discounts and launch lists. We don't. <strong>The Workshop is the closest thing we could build to inviting you into the room where we make the chain.</strong></p>
-        <p>You'll hear about prototypes before they ship. Decisions before they're made public. Mistakes before they're cleaned up.</p>
-      </div>
+    <div class="eyebrow">Inside the Workshop</div>
+    <h2>Not a brand newsletter.<span class="italic">A different kind of channel.</span></h2>
+    <div class="body">
+      <p>Most brands send you discounts and launch lists. We don't. <strong>The Workshop is the closest thing we could build to inviting you into the room where the chain is made.</strong></p>
+      <p>You'll hear about prototypes before they ship. Decisions before they're made public. Mistakes before they're cleaned up.</p>
     </div>
   </div>
 
-  <!-- VOICE -->
+  <!-- WHAT'S INSIDE — with image -->
+  <div class="section with-image">
+    <div class="eyebrow">What you'll find</div>
+    <h2>The chains we ship.<span class="italic">And the ones we killed.</span></h2>
+    <div class="figure">
+      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="12mm chain prototype in hand"/>
+      <div class="cap">The 12mm we're testing this month. Two rounds of polish failed. Round three is in hand.</div>
+    </div>
+    <div class="body">
+      <p><strong>The prototype we walked away from at 80%.</strong> The weight was right, the finish wasn't. Three rounds of polish failed inspection. We share the call, the cost, and what changed in the next sample.</p>
+      <p><strong>The clasp that failed inspection.</strong> Six clasps shipped with a tolerance issue we didn't catch. The conversation that ended it, written down.</p>
+      <p><strong>The supplier we stopped working with.</strong> Six-month trial. Two missed deadlines. One QA dispute. The full record.</p>
+    </div>
+  </div>
+
+  <!-- VOICE BREAK -->
   <div class="voice">
-    <div class="quote-mark">"</div>
+    <div class="eyebrow">Why we made it</div>
     <div class="quote">"I never take it off."</div>
     <div class="sub">Shower. Gym. Sleep. It's just always on.</div>
-    <div class="attrib">Nobody asked them to say that. Different cities. Same words.</div>
+    <div class="attrib">Different cities. Same words. Nobody asked them to say that.</div>
   </div>
 
-  <!-- 02 -->
-  <div class="section">
-    <div class="num">02</div>
-    <div class="inner">
-      <div class="eyebrow">What's inside</div>
-      <h2>The chains we ship.<span class="italic">And the ones we killed.</span></h2>
-      <div class="body">
-        <p><strong>The prototype we walked away from at 80%.</strong> The weight was right, the finish wasn't. Three rounds of polish failed inspection. We share the call, the cost, and what changed in the next sample.</p>
-        <p><strong>The clasp that failed inspection.</strong> Six clasps shipped with a tolerance issue we didn't catch. The conversation that ended it, written down.</p>
-        <p><strong>The supplier we stopped working with.</strong> Six-month trial. Two missed deadlines. One QA dispute. The full record — what we'd have done differently.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 03 MISSION-style (image-led to dark) -->
-  <div class="mission">
-    <div class="image">
+  <!-- WHY WE BUILT IT — with image -->
+  <div class="section with-image">
+    <div class="eyebrow">Why we built it</div>
+    <h2>The conversations we used to lose.<span class="italic">Now written down.</span></h2>
+    <div class="figure">
       <img src="../balanzi-assets/product close-ups/Polished/polished-gold-chain-clasp-detail-macro.jpg" alt="Clasp detail · BALANZI"/>
-      <div class="image-fade"></div>
+      <div class="cap">The clasp detail. Where most of the decisions live.</div>
     </div>
-    <div class="dark"></div>
-    <div class="inner">
-      <div class="num">03</div>
-      <div class="eyebrow">Why we built it</div>
-      <h2>Not a marketing channel.<span class="italic">The room where it's made.</span></h2>
-      <div class="standfirst">Every week we have conversations we wish more people could overhear. The Workshop is where those get written down.</div>
-      <div class="body">
-        <p>Why we stopped working with a supplier. Why we killed a prototype. What we'd actually tell a friend before he picks his first chain. <strong>These conversations sit in our DMs and disappear.</strong></p>
-        <p>The Workshop is the answer. ~1 letter a week. No discounts. No launch hype. If we have something to sell you, we'll say so. Otherwise we won't.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="big">~1 / week</div>
-    <div class="sub">The cadence. <strong>Short, written by us, sent only when there's something worth saying.</strong></div>
-    <div class="row">
-      <div class="col">
-        <span class="num">0 ads</span>
-        <span class="lbl">In the channel</span>
-      </div>
-      <div class="col">
-        <span class="num">0 forwards</span>
-        <span class="lbl">It stays small</span>
-      </div>
+    <div class="body">
+      <p>Every week we have conversations we wish more people could overhear. Why we stopped working with a supplier. Why we killed a prototype. <strong>What we'd actually tell a friend before he picks his first chain.</strong></p>
+      <p>Those conversations sit in our DMs and disappear. The Workshop is where they get written down. <strong>No discounts. No launch hype.</strong> If we have something to sell you, we'll say so. Otherwise we won't.</p>
     </div>
   </div>
 
@@ -200,8 +175,9 @@
 
   <!-- BOTTOM CTA -->
   <div class="bottom">
+    <div class="eyebrow">The Workshop</div>
     <h2>Step inside.<span class="italic">Watch us work.</span></h2>
-    <div class="body">From the BALANZI founders. The chain we're testing this month. The clasp we changed last month. The call we made last week. That's the Workshop.</div>
+    <div class="body">The chain we're testing this month. The clasp we changed last month. The call we made last week. <strong>That's the Workshop.</strong></div>
     <a href="#" class="cta" onclick="document.querySelector('.signup input').focus(); return false;">Get the invite →</a>
   </div>
 
