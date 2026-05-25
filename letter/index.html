@@ -7,163 +7,178 @@
 <meta name="description" content="A letter from the BALANZI founders about The Workshop — what it is, what's inside, why we built it." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box; margin:0; padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif; background:#F4F2EE; color:#1C1C1C; line-height:1.5; -webkit-font-smoothing:antialiased}
-  img{max-width:100%; display:block}
-  .container{max-width:680px; margin:0 auto; padding:0 32px}
+  html,body{background:#FFFFFF}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif; color:#6B6560; font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+  img{max-width:100%; display:block; border-radius:0}
+  a{color:inherit}
+  .page{min-height:100vh; background:#FFFFFF; max-width:480px; margin:0 auto}
 
-  /* HEADER */
-  header{padding:32px 0}
-  header .row{display:flex; align-items:center; justify-content:space-between}
-  header img{height:18px; width:auto; opacity:0.92}
-  header .right{font:500 italic 13px/1 Inter,sans-serif; color:#8A857E; letter-spacing:0.04em}
+  /* HERO */
+  .hero{position:relative; height:380px; overflow:hidden}
+  .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 40%}
+  .hero .gradient{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(28,28,28,0.10) 0%, rgba(28,28,28,0.30) 40%, rgba(28,28,28,0.82) 70%, rgba(28,28,28,0.92) 100%)}
+  .hero .content{position:absolute; bottom:0; left:0; right:0; padding:28px 20px}
+  .hero .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:14px}
+  .hero h1{font-size:38px; font-weight:800; line-height:1.05; color:#FFFFFF; letter-spacing:-0.025em; margin:0}
+  .hero h1 .italic{display:block; font-weight:300; font-style:italic; color:rgba(255,255,255,0.5); margin-top:3px; font-size:38px}
+  .hero .lede{margin-top:16px; font-size:14px; color:rgba(255,255,255,0.55); line-height:1.65; padding-top:16px; border-top:1px solid rgba(255,255,255,0.10)}
 
   /* LETTER */
-  .letter{padding:80px 0 100px}
-  .letter .date{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:32px}
-  .letter .salutation{font:300 italic 32px/1.4 Inter,sans-serif; color:#1C1C1C; margin-bottom:48px; letter-spacing:-0.012em}
-  .letter h1{font:800 clamp(44px, 6vw, 64px)/1.05 Inter,sans-serif; letter-spacing:-0.024em; color:#1C1C1C; margin-bottom:6px}
-  .letter h1 .italic{font:300 italic clamp(44px, 6vw, 64px)/1.05 Inter,sans-serif; color:#8A857E; display:block; letter-spacing:-0.016em}
+  .letter{padding:28px 20px 12px; border-bottom:1px solid #E8E3DC}
+  .letter .date{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:14px}
+  .letter .salutation{font-size:18px; font-weight:300; font-style:italic; color:#1C1C1C; line-height:1.4; margin-bottom:20px; letter-spacing:-0.005em}
+  .letter h2{font-size:23px; font-weight:800; color:#1C1C1C; line-height:1.1; margin:0 0 18px; letter-spacing:-0.01em}
+  .letter h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:22px; margin-top:3px}
 
-  .letter .body{margin-top:56px}
-  .letter .body p{font:400 18px/1.7 Inter,sans-serif; color:#1C1C1C; margin-bottom:28px}
-  .letter .body p.lede{font:400 20px/1.65 Inter,sans-serif; color:#1C1C1C; margin-bottom:36px}
-  .letter .body p em{font:300 italic 18px/1.7 Inter,sans-serif; color:#8A857E}
-  .letter .body p strong{font-weight:700}
-  .letter .body .small{font:500 italic 16px/1.6 Inter,sans-serif; color:#8A857E; margin-top:-12px; margin-bottom:28px}
+  .letter .body{font-size:14px; line-height:1.78; color:#6B6560}
+  .letter .body p{margin:0}
+  .letter .body p + p{margin-top:13px}
+  .letter .body strong{color:#1C1C1C; font-weight:700}
+  .letter .body em.aside{font-weight:300; font-style:italic; color:#AAAAAA}
 
   /* INLINE IMAGE */
-  .letter .figure{margin:48px -32px; background:#1C1C1C}
-  .letter .figure img{width:100%; display:block; aspect-ratio:16/9; object-fit:cover}
-  .letter .figure .cap{padding:14px 32px 16px; font:500 italic 13px/1.5 Inter,sans-serif; color:#8A857E; background:#F4F2EE; border-bottom:1px solid rgba(28,28,28,0.08)}
+  .letter-figure{margin:20px -20px; position:relative; overflow:hidden; background:#1C1C1C}
+  .letter-figure img{width:100%; aspect-ratio:16/10; object-fit:cover; display:block}
+  .letter-figure .cap{padding:12px 20px 14px; font-size:11px; line-height:1.5; color:#AAAAAA; background:#FFFFFF; border-top:1px solid #E8E3DC; font-weight:500; letter-spacing:0.01em; font-style:italic}
 
-  /* LIST */
-  .letter ul.specifics{margin:8px 0 36px; padding:0; list-style:none}
-  .letter ul.specifics li{font:400 17px/1.7 Inter,sans-serif; color:#1C1C1C; padding:14px 0 14px 24px; position:relative; border-bottom:1px solid rgba(28,28,28,0.08)}
-  .letter ul.specifics li::before{content:"·"; position:absolute; left:0; top:13px; font-weight:800; color:#8A857E; font-size:24px; line-height:1}
-  .letter ul.specifics li em{font:300 italic 17px/1.7 Inter,sans-serif; color:#8A857E}
+  /* LIST (specifics) */
+  .specifics{margin:16px 0 18px; padding:0; list-style:none; border-top:1px solid #E8E3DC; border-bottom:1px solid #E8E3DC}
+  .specifics li{font-size:14px; line-height:1.65; color:#6B6560; padding:14px 0 14px 22px; position:relative; border-bottom:1px solid #E8E3DC}
+  .specifics li:last-child{border-bottom:none}
+  .specifics li::before{content:""; position:absolute; left:0; top:21px; width:8px; height:1px; background:#1C1C1C}
+  .specifics li strong{color:#1C1C1C; font-weight:700}
+  .specifics li em{font-weight:300; font-style:italic; color:#AAAAAA}
 
   /* SIGN-OFF */
-  .letter .signoff{margin-top:56px}
-  .letter .signoff p{font:400 17px/1.6 Inter,sans-serif; color:#1C1C1C; margin-bottom:6px}
-  .letter .signoff .signed{font:300 italic 22px/1.4 Inter,sans-serif; color:#1C1C1C; margin-top:28px; letter-spacing:-0.008em}
-  .letter .signoff .attrib{font:700 11px/1 Inter,sans-serif; letter-spacing:0.28em; text-transform:uppercase; color:#8A857E; margin-top:14px}
+  .signoff{padding:20px 20px 28px; border-bottom:1px solid #E8E3DC}
+  .signoff .closing{font-size:14px; color:#6B6560; margin-bottom:6px; line-height:1.65}
+  .signoff .signed{font-size:22px; font-weight:300; font-style:italic; color:#1C1C1C; line-height:1.3; margin-top:14px; letter-spacing:-0.005em}
+  .signoff .place{margin-top:10px; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA}
 
-  /* SIGNUP BLOCK */
-  .signup-block{padding:96px 0 80px; border-top:1px solid rgba(28,28,28,0.08); background:#F4F2EE; text-align:center}
-  .signup-block .eyebrow{font:700 11px/1 Inter,sans-serif; letter-spacing:0.32em; text-transform:uppercase; color:#8A857E; margin-bottom:24px}
-  .signup-block h2{font:800 clamp(36px, 5vw, 52px)/1.05 Inter,sans-serif; letter-spacing:-0.022em; margin-bottom:6px}
-  .signup-block h2 .italic{font:300 italic clamp(36px, 5vw, 52px)/1.05 Inter,sans-serif; color:#8A857E; display:block; letter-spacing:-0.016em}
-  .signup-block .lede{font:400 16px/1.6 Inter,sans-serif; color:#3D3833; max-width:440px; margin:28px auto 40px}
-  form.signup{max-width:440px; margin:0 auto}
-  form.signup .caption{font:500 italic 13px/1.5 Inter,sans-serif; color:#8A857E; margin-bottom:12px}
-  form.signup .field{display:flex; border:1px solid #1C1C1C; background:#F4F2EE}
-  form.signup input[type=email]{flex:1; padding:18px 22px; font:400 16px Inter,sans-serif; color:#1C1C1C; background:transparent; border:none; outline:none}
-  form.signup input[type=email]::placeholder{color:#8A857E}
-  form.signup button{padding:18px 28px; font:700 12px/1 Inter,sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:#F4F2EE; background:#1C1C1C; border:none; cursor:pointer; transition:opacity 0.15s; white-space:nowrap}
-  form.signup button:hover{opacity:0.85}
-  form.signup .footnote{font:400 13px/1.55 Inter,sans-serif; color:#8A857E; margin-top:18px}
+  /* VOICE */
+  .voice{background:#1C1C1C; padding:28px 20px; border-bottom:1px solid rgba(255,255,255,0.06); position:relative; overflow:hidden}
+  .voice .quote-mark{position:absolute; top:-20px; left:8px; font-size:130px; font-weight:900; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none}
+  .voice .quote{font-size:18px; font-weight:700; color:#FFFFFF; line-height:1.4; position:relative; z-index:1}
+  .voice .sub{margin-top:4px; font-size:14px; color:#666666; line-height:1.4; position:relative; z-index:1}
+  .voice .attrib{margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#666666; position:relative; z-index:1}
 
-  /* FOOTER */
-  footer{padding:48px 0 60px; border-top:1px solid rgba(28,28,28,0.08)}
-  footer .row{display:flex; align-items:center; justify-content:space-between}
-  footer img{height:14px; width:auto; opacity:0.7}
-  footer .copy{font:400 12px/1 Inter,sans-serif; color:#8A857E; letter-spacing:0.02em}
+  /* SIGNUP */
+  .signup{padding:26px 20px; border-bottom:1px solid #E8E3DC; border-left:3px solid #1C1C1C}
+  .signup .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#AAAAAA; margin-bottom:10px}
+  .signup h2{font-size:19px; font-weight:800; color:#1C1C1C; line-height:1.2; margin:0 0 12px; letter-spacing:-0.01em}
+  .signup h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; margin-top:2px; font-size:18px}
+  .signup .body{font-size:14px; line-height:1.7; color:#6B6560; margin-bottom:18px}
+  .signup .body strong{color:#1C1C1C; font-weight:700}
+  .signup form{margin-top:6px}
+  .signup .field{display:flex; border:1px solid #1C1C1C; background:#FFFFFF}
+  .signup .field input{flex:1; padding:13px 14px; font:400 14px/1 'Inter',sans-serif; color:#1C1C1C; background:transparent; border:none; outline:none}
+  .signup .field input::placeholder{color:#AAAAAA}
+  .signup .field button{padding:13px 18px; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#FFFFFF; background:#1C1C1C; border:none; cursor:pointer}
+  .signup .micro{margin-top:10px; font-size:11px; line-height:1.5; color:#AAAAAA}
 
-  @media (max-width:560px){
-    .container{padding:0 22px}
-    .letter{padding:48px 0 80px}
-    .letter .salutation{font-size:24px}
-    .letter .figure{margin:36px -22px}
-    .letter .figure .cap{padding:12px 22px 14px}
-    form.signup .field{flex-direction:column}
-    form.signup button{padding:18px}
+  /* BOTTOM CTA */
+  .bottom{padding:28px 20px 36px; border-top:3px solid #1C1C1C}
+  .bottom h2{font-size:30px; font-weight:900; color:#1C1C1C; line-height:1; margin:0 0 10px; letter-spacing:-0.025em}
+  .bottom h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA}
+  .bottom .body{font-size:14px; color:#6B6560; margin-bottom:20px; line-height:1.65}
+  .bottom .cta{display:inline-block; background:#1C1C1C; color:#FFFFFF; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:13px 22px; text-decoration:none; border:none; cursor:pointer; font-family:inherit}
+
+  @media (max-width:480px){
+    .page{max-width:100%}
   }
 </style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="container" style="max-width:880px">
-    <div class="row">
-      <img src="../balanzi-assets/Logo assets/balanzi-london-wordmark-dark.png" alt="BALANZI · London"/>
-      <div class="right">A letter</div>
+  <!-- HERO -->
+  <div class="hero">
+    <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-bracelets-on-laptop-with-box.jpg" alt="The Workshop · BALANZI"/>
+    <div class="gradient"></div>
+    <div class="content">
+      <div class="eyebrow">A letter from BALANZI</div>
+      <h1>We started a place.<span class="italic">It's called The Workshop.</span></h1>
+      <div class="lede">Not a brand newsletter. The closest thing we could build to inviting you in.</div>
     </div>
   </div>
-</header>
 
-<article class="letter">
-  <div class="container">
+  <!-- LETTER -->
+  <div class="letter">
     <div class="date">May 2026 · The Workshop</div>
+    <div class="salutation">To whoever's reading this —</div>
 
-    <p class="salutation">To whoever's reading this —</p>
-
-    <h1>We started a place.<span class="italic">It's called The Workshop.</span></h1>
+    <h2>Here's the honest version.<span class="italic">Plainly said.</span></h2>
 
     <div class="body">
-      <p class="lede">It's not a brand newsletter. It's not a launch list. It's the closest thing we could build to inviting you into the workshop while we work — so you can see how we make decisions before you make yours.</p>
+      <p>We don't have an atelier. There's no marble counter, no soft-jazz showroom, no creative director. <strong>There's a desk, a factory we talk to every day, a few notebooks, and the next chain we're testing on someone's wrist.</strong></p>
+      <p><em class="aside">That's the Workshop.</em></p>
 
-      <p>Here's the honest version: we don't have an atelier. There's no marble counter, no soft-jazz showroom, no creative director. There's a desk, a factory we talk to every day, a few notebooks, and the next chain we're testing on someone's wrist. <em>That's the Workshop.</em></p>
-
-      <div class="figure">
+      <div class="letter-figure">
         <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="12mm chain prototype in hand"/>
         <div class="cap">The 12mm we're testing this month. Two rounds of polish failed. Round three is in hand.</div>
       </div>
 
-      <p>We built it because every week we have conversations we wish more people could overhear. Why we stopped working with a supplier. Why we killed a prototype at 80%. What we'd actually tell a friend before he picks his first chain. <em>Those conversations sit in our DMs and disappear.</em> The Workshop is where they get written down.</p>
+      <p>We built it because every week we have conversations we wish more people could overhear. Why we stopped working with a supplier. Why we killed a prototype at 80%. <strong>What we'd actually tell a friend before he picks his first chain.</strong></p>
+
+      <p><em class="aside">Those conversations sit in our DMs and disappear. The Workshop is where they get written down.</em></p>
 
       <p>What you'll find inside, in plain terms:</p>
 
       <ul class="specifics">
-        <li>The prototype we walked away from <em>at 80% complete.</em></li>
-        <li>The clasp that failed inspection <em>and what changed in the next sample.</em></li>
-        <li>The supplier we stopped working with <em>after a six-month trial.</em></li>
-        <li>The questions we answer directly <em>before you'd think to ask.</em></li>
-        <li>Reading recs, music we play while we work, <em>occasional opinions you didn't ask for.</em></li>
+        <li><strong>The prototype we walked away from</strong> <em>at 80% complete.</em></li>
+        <li><strong>The clasp that failed inspection</strong> <em>and what changed in the next sample.</em></li>
+        <li><strong>The supplier we stopped working with</strong> <em>after a six-month trial.</em></li>
+        <li><strong>The questions we answer directly</strong> <em>before you'd think to ask.</em></li>
+        <li><strong>Reading recs, music we play while we work,</strong> <em>occasional opinions you didn't ask for.</em></li>
       </ul>
 
-      <p>One letter a week. Sometimes two if there's something worth showing. Nothing on weekends. No discounts in your inbox — we don't run them in The Workshop. <strong>If we have something to sell you, we'll say so. Otherwise we won't.</strong></p>
+      <p>One letter a week. Sometimes two if there's something worth showing. Nothing on weekends. <strong>No discounts in your inbox</strong> — we don't run them in The Workshop. If we have something to sell you, we'll say so. Otherwise we won't.</p>
 
-      <p>The door is your inbox. Drop your email below and we'll send the invite. Please don't forward it — The Workshop stays useful by staying small.</p>
+      <p>The door is your inbox. Drop your email below and we'll send the invite. <strong>Please don't forward it.</strong> The Workshop stays useful by staying small.</p>
 
-      <p class="small">If that sounds like the wrong place for you, that's fine. We'll be here either way.</p>
-    </div>
-
-    <div class="signoff">
-      <p>Yours,</p>
-      <p class="signed">The BALANZI founders</p>
-      <div class="attrib">London · the desk · the factory</div>
+      <p><em class="aside">If that sounds like the wrong place for you, that's fine. We'll be here either way.</em></p>
     </div>
   </div>
-</article>
 
-<section class="signup-block" id="join">
-  <div class="container">
+  <!-- SIGN-OFF -->
+  <div class="signoff">
+    <div class="closing">Yours,</div>
+    <div class="signed">The BALANZI founders</div>
+    <div class="place">London · the desk · the factory</div>
+  </div>
+
+  <!-- VOICE -->
+  <div class="voice">
+    <div class="quote-mark">"</div>
+    <div class="quote">"I never take it off."</div>
+    <div class="sub">Shower. Gym. Sleep. It's just always on.</div>
+    <div class="attrib">Nobody asked them to say that. Different cities. Same words.</div>
+  </div>
+
+  <!-- SIGNUP -->
+  <div class="signup">
     <div class="eyebrow">Step inside</div>
     <h2>Drop your email.<span class="italic">We'll send the invite.</span></h2>
-    <p class="lede">The Workshop is closed by default. The invite arrives only by inbox — that's how we keep it small.</p>
-    <form class="signup" action="#" method="POST" onsubmit="return false;">
-      <div class="caption">Free. ~1 email a week. Unsubscribe anytime.</div>
+    <div class="body">The Workshop is closed by default. <strong>The invite arrives only by inbox</strong> — that's how we keep it small.</div>
+    <form action="#" method="POST" onsubmit="return false;">
       <div class="field">
         <input type="email" placeholder="your@email" required />
         <button type="submit">Send the invite</button>
       </div>
-      <div class="footnote">We won't share your email. The invite is private — please don't forward it.</div>
+      <div class="micro">Free. ~1 email a week. Unsubscribe anytime. The invite is private — please don't forward it.</div>
     </form>
   </div>
-</section>
 
-<footer>
-  <div class="container" style="max-width:880px">
-    <div class="row">
-      <img src="../balanzi-assets/Logo assets/balanzi-london-wordmark-dark.png" alt="BALANZI · London"/>
-      <div class="copy">© 2026 BALANZI · The Workshop</div>
-    </div>
+  <!-- BOTTOM CTA -->
+  <div class="bottom">
+    <h2>Step inside.<span class="italic">Watch us work.</span></h2>
+    <div class="body">From the BALANZI founders. The chain we're testing this month. The clasp we changed last month. The call we made last week. That's the Workshop.</div>
+    <a href="#" class="cta" onclick="document.querySelector('.signup input').focus(); return false;">Get the invite →</a>
   </div>
-</footer>
 
+</div>
 </body>
 </html>
