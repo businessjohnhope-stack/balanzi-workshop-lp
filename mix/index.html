@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Workshop · BALANZI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{background:#FFFFFF}
+  body{font-family:'Inter','Helvetica Neue',Arial,sans-serif; color:#6B6560; font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+  img{max-width:100%; display:block; border-radius:0}
+  a{color:inherit; text-decoration:none}
+  .page{min-height:100vh; background:#FFFFFF; max-width:480px; margin:0 auto}
+
+  .ribbon{padding:14px 20px; background:#1C1C1C; display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .ribbon .name{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#FFFFFF}
+  .ribbon .from{font-size:10px; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.5)}
+
+  /* HERO — letter softness + image */
+  .hero{position:relative; height:440px; overflow:hidden}
+  .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 42%}
+  .hero .gradient{position:absolute; inset:0; background:linear-gradient(to bottom, transparent 0%, transparent 46%, rgba(28,28,28,0.50) 72%, rgba(28,28,28,0.92) 100%)}
+  .hero .badge{position:absolute; top:18px; left:18px; font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#FFFFFF; background:rgba(0,0,0,0.55); backdrop-filter:blur(8px); padding:8px 12px; border:1px solid rgba(255,255,255,0.2)}
+  .hero .content{position:absolute; bottom:0; left:0; right:0; padding:26px 20px}
+  .hero .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:12px}
+  .hero h1{font-size:33px; font-weight:800; line-height:1.07; color:#FFFFFF; letter-spacing:-0.02em; margin:0}
+  .hero h1 .italic{display:block; font-weight:300; font-style:italic; color:rgba(255,255,255,0.62); margin-top:5px; font-size:30px}
+
+  /* OPENING LETTER — the honest open, intimate */
+  .letter{padding:34px 20px 8px}
+  .letter .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:18px}
+  .letter .salutation{font-size:17px; font-weight:300; font-style:italic; color:#1C1C1C; line-height:1.4; margin-bottom:18px}
+  .letter h2{font-size:23px; font-weight:800; color:#1C1C1C; line-height:1.15; margin:0 0 16px; letter-spacing:-0.012em}
+  .letter h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:22px; margin-top:3px}
+  .letter .body{font-size:14px; line-height:1.78; color:#6B6560; margin-bottom:18px}
+  .letter .body p{margin:0}
+  .letter .body p + p{margin-top:13px}
+  .letter .body strong{color:#1C1C1C; font-weight:700}
+
+  /* INLINE FIGURE (letter) */
+  .letter-figure{margin:8px -20px 22px; position:relative; overflow:hidden; background:#1C1C1C}
+  .letter-figure img{width:100%; aspect-ratio:16/10; object-fit:cover; display:block}
+  .letter-figure .cap{padding:10px 20px 12px; font-size:11px; line-height:1.5; color:#AAAAAA; background:#F5F5F5; border-top:1px solid #E8E3DC; font-weight:500; font-style:italic}
+
+  /* IMAGE SECTIONS (manifesto structure — each section its own image) */
+  .isec{border-top:1px solid #E8E3DC}
+  .isec .figure{position:relative; overflow:hidden; background:#1C1C1C}
+  .isec .figure img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block}
+  .isec .figure .tag{position:absolute; top:14px; left:14px; font-size:10px; font-weight:700; letter-spacing:0.20em; text-transform:uppercase; color:#FFFFFF; background:rgba(0,0,0,0.55); backdrop-filter:blur(8px); padding:7px 11px; border:1px solid rgba(255,255,255,0.2)}
+  .isec .inner{padding:24px 20px 26px}
+  .isec h3{font-size:22px; font-weight:800; color:#1C1C1C; line-height:1.16; margin:0 0 4px; letter-spacing:-0.012em}
+  .isec h3 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; font-size:21px; margin-top:3px}
+  .isec .body{font-size:14px; line-height:1.78; color:#6B6560; margin-top:14px}
+  .isec .body strong{color:#1C1C1C; font-weight:700}
+
+  /* VOICE break (dark) */
+  .voice{background:#1C1C1C; padding:30px 20px}
+  .voice .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:14px}
+  .voice .quote{font-size:21px; font-weight:700; color:#FFFFFF; line-height:1.35}
+  .voice .sub{margin-top:8px; font-size:14px; color:#888; line-height:1.5}
+  .voice .attrib{margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1); font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#888}
+
+  /* PROMISE (no discounts) */
+  .promise{padding:28px 20px; border-top:1px solid #E8E3DC}
+  .promise .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:12px}
+  .promise h2{font-size:21px; font-weight:800; color:#1C1C1C; line-height:1.18; margin:0 0 12px; letter-spacing:-0.012em}
+  .promise .body{font-size:14px; line-height:1.78; color:#6B6560}
+  .promise .body strong{color:#1C1C1C; font-weight:700}
+
+  /* SIGN-OFF (letter) */
+  .signoff{padding:26px 20px 30px; border-top:1px solid #E8E3DC}
+  .signoff .closing{font-size:14px; color:#6B6560; margin-bottom:6px; line-height:1.6}
+  .signoff .signed{font-size:21px; font-weight:300; font-style:italic; color:#1C1C1C; line-height:1.3; margin-top:14px}
+  .signoff .place{margin-top:8px; font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA}
+
+  /* SIGNUP */
+  .signup{padding:28px 20px; border-top:1px solid #E8E3DC; border-left:3px solid #1C1C1C; background:#FAFAFA}
+  .signup .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#1C1C1C; margin-bottom:12px}
+  .signup h2{font-size:22px; font-weight:800; color:#1C1C1C; line-height:1.15; margin:0 0 14px; letter-spacing:-0.012em}
+  .signup h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA; margin-top:3px; font-size:21px}
+  .signup .body{font-size:14px; line-height:1.7; color:#6B6560; margin-bottom:18px}
+  .signup .body strong{color:#1C1C1C; font-weight:700}
+  .signup .field{display:flex; border:1px solid #1C1C1C; background:#FFFFFF}
+  .signup .field input{flex:1; padding:14px 14px; font:400 14px/1 'Inter',sans-serif; color:#1C1C1C; background:transparent; border:none; outline:none}
+  .signup .field input::placeholder{color:#AAAAAA}
+  .signup .field button{padding:14px 18px; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:#FFFFFF; background:#1C1C1C; border:none; cursor:pointer; font-family:inherit}
+  .signup .micro{margin-top:10px; font-size:11px; line-height:1.5; color:#AAAAAA}
+
+  /* BOTTOM CTA */
+  .bottom{padding:34px 20px 42px; border-top:3px solid #1C1C1C}
+  .bottom .eyebrow{font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#AAAAAA; margin-bottom:14px}
+  .bottom h2{font-size:30px; font-weight:900; color:#1C1C1C; line-height:1; margin:0 0 12px; letter-spacing:-0.025em}
+  .bottom h2 .italic{display:block; font-weight:300; font-style:italic; color:#AAAAAA}
+  .bottom .body{font-size:14px; color:#6B6560; margin-bottom:22px; line-height:1.65}
+  .bottom .cta{display:inline-block; background:#1C1C1C; color:#FFFFFF; font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:14px 22px; text-decoration:none}
+
+  @media (max-width:480px){ .page{max-width:100%} }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="ribbon">
+    <span class="name">The Workshop</span>
+    <span class="from">From BALANZI</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-busts-with-chains-and-open-box.jpg" alt="The Workshop · BALANZI" />
+    <div class="gradient"></div>
+    <div class="badge">The Workshop · Private</div>
+    <div class="content">
+      <div class="eyebrow">From the BALANZI founders</div>
+      <h1>We started a place.<span class="italic">It's called The Workshop.</span></h1>
+    </div>
+  </div>
+
+  <!-- OPENING LETTER · the honest open -->
+  <div class="letter">
+    <div class="eyebrow">A letter · May 2026</div>
+    <p class="salutation">To whoever's reading this —</p>
+    <h2>Here's the honest version.<span class="italic">Plainly said.</span></h2>
+    <div class="body">
+      <p>We don't have an atelier. There's no marble counter, no soft-jazz showroom, no creative director.</p>
+      <p>There's a desk, a factory we talk to every day, a few notebooks, and the next chain we're testing on someone's wrist.</p>
+      <p>That's the Workshop.</p>
+    </div>
+
+    <div class="letter-figure">
+      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-bracelets-on-laptop-with-box.jpg" alt="The desk where the work happens" />
+      <div class="cap">The desk. A laptop, a box, the next sample. Where most of it actually happens.</div>
+    </div>
+
+    <div class="body">
+      <p>We built it because every week we have conversations we wish more people could overhear. Why we stopped working with a supplier. Why we killed a prototype at 80%.</p>
+      <p>What we'd actually tell a friend before he picks his first chain.</p>
+      <p>Those conversations sit in our DMs and disappear. <strong>The Workshop is where they get written down.</strong></p>
+    </div>
+  </div>
+
+  <!-- IMAGE SECTIONS · what you'll find inside (manifesto structure) -->
+  <div class="isec">
+    <div class="figure">
+      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-mixed-silver-gold-chains-pile.jpg" alt="The chains we ship and the ones we killed" />
+      <span class="tag">What you'll find</span>
+    </div>
+    <div class="inner">
+      <h3>The chains we ship.<span class="italic">And the ones we killed.</span></h3>
+      <div class="body">
+        <p>The 12mm we're testing this month — two rounds of polish failed, round three is in hand. You'll see the prototypes before they ship, and the ones that never will.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="isec">
+    <div class="figure">
+      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="12mm prototype in hand" />
+      <span class="tag">The prototype</span>
+    </div>
+    <div class="inner">
+      <h3>The one we walked away from<span class="italic">at 80% complete.</span></h3>
+      <div class="body">
+        <p>The weight was right. The finish wasn't. Three rounds of polish failed inspection. <strong>We share the call, the cost, and what changed in the next sample.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="isec">
+    <div class="figure">
+      <img src="../balanzi-assets/product close-ups/Polished/polished-gold-chain-clasp-detail-macro.jpg" alt="Clasp detail · BALANZI" />
+      <span class="tag">The clasp</span>
+    </div>
+    <div class="inner">
+      <h3>The clasp that<span class="italic">failed inspection.</span></h3>
+      <div class="body">
+        <p>Six clasps shipped with a tolerance issue we didn't catch. The conversation that ended it — written down, start to finish. The clasp is where most of the decisions live.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="isec">
+    <div class="figure">
+      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-busts-and-tray-setup-sideways.jpg" alt="Supplier trial setup" />
+      <span class="tag">The supplier</span>
+    </div>
+    <div class="inner">
+      <h3>The one we<span class="italic">stopped working with.</span></h3>
+      <div class="body">
+        <p>Six-month trial. Two missed deadlines. One QA dispute. The full record — so you know exactly what we hold a supplier to before a chain ever reaches you.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOICE break -->
+  <div class="voice">
+    <div class="eyebrow">Why we made it</div>
+    <div class="quote">"I never take it off."</div>
+    <div class="sub">Shower. Gym. Sleep. It's just always on.</div>
+    <div class="attrib">Different cities. Same words. Nobody asked them to say it.</div>
+  </div>
+
+  <!-- PROMISE -->
+  <div class="promise">
+    <div class="eyebrow">One promise</div>
+    <h2>No discounts in your inbox.</h2>
+    <div class="body">
+      <p>We don't run them in The Workshop. If we have something to sell you, <strong>we'll say so. Otherwise we won't.</strong> One letter a week. Sometimes two, if there's something worth showing.</p>
+    </div>
+  </div>
+
+  <!-- SIGN-OFF -->
+  <div class="signoff">
+    <div class="closing">The door is your inbox. Drop your email below and we'll send the invite.</div>
+    <div class="closing"><strong>Please don't forward it.</strong> The Workshop stays useful by staying small.</div>
+    <div class="signed">Yours,<br>The BALANZI founders</div>
+    <div class="place">London · the desk · the factory</div>
+  </div>
+
+  <!-- SIGNUP -->
+  <div class="signup">
+    <div class="eyebrow">Step inside</div>
+    <h2>Drop your email.<span class="italic">We'll send the invite.</span></h2>
+    <div class="body">The Workshop is closed by default. The invite arrives only by inbox — that's how we keep it small.</div>
+    <form class="field" onsubmit="return false;">
+      <input type="email" placeholder="you@email.com" aria-label="Email address" />
+      <button type="submit">Send the invite</button>
+    </form>
+    <div class="micro">Free. ~1 email a week. Unsubscribe anytime. The invite is private — please don't forward it.</div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom">
+    <div class="eyebrow">The Workshop</div>
+    <h2>Step inside.<span class="italic">Watch us work.</span></h2>
+    <div class="body">The chain we're testing this month. The clasp we changed last month. The call we made last week. That's the Workshop.</div>
+    <a class="cta" href="#top">Get the invite →</a>
+  </div>
+
+</div>
+</body>
+</html>
