@@ -40,10 +40,11 @@
   .letter .body p + p{margin-top:13px}
   .letter .body strong{color:#1C1C1C; font-weight:700}
 
-  /* INLINE FIGURE (letter) */
-  .letter-figure{margin:8px -20px 22px; position:relative; overflow:hidden; background:#1C1C1C}
-  .letter-figure img{width:100%; aspect-ratio:16/10; object-fit:cover; display:block}
-  .letter-figure .cap{padding:10px 20px 12px; font-size:11px; line-height:1.5; color:#AAAAAA; background:#F5F5F5; border-top:1px solid #E8E3DC; font-weight:500; font-style:italic}
+  /* SPECIFICS — clean text rows, no images */
+  .specifics{margin:6px 0 2px; padding:0; list-style:none; border-top:1px solid #E8E3DC}
+  .specifics li{font-size:14px; line-height:1.65; color:#6B6560; padding:15px 0; border-bottom:1px solid #E8E3DC}
+  .specifics li strong{color:#1C1C1C; font-weight:700}
+  .specifics li em{font-weight:300; font-style:italic; color:#AAAAAA; margin-left:3px}
 
   /* IMAGE SECTIONS (manifesto structure — each section its own image) */
   .isec{border-top:1px solid #E8E3DC}
@@ -130,11 +131,6 @@
       <p>That's the Workshop.</p>
     </div>
 
-    <div class="letter-figure">
-      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-bracelets-on-laptop-with-box.jpg" alt="The desk where the work happens" />
-      <div class="cap">The desk. A laptop, a box, the next sample. Where most of it actually happens.</div>
-    </div>
-
     <div class="body">
       <p>We built it because every week we have conversations we wish more people could overhear. Why we stopped working with a supplier. Why we killed a prototype at 80%.</p>
       <p>What we'd actually tell a friend before he picks his first chain.</p>
@@ -142,33 +138,21 @@
     </div>
   </div>
 
-  <!-- IMAGE SECTIONS · what you'll find inside (manifesto structure) -->
-  <div class="isec">
-    <div class="figure">
-      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-mixed-silver-gold-chains-pile.jpg" alt="The chains we ship and the ones we killed" />
-      <span class="tag">What you'll find</span>
-    </div>
-    <div class="inner">
-      <h3>The chains we ship.<span class="italic">And the ones we killed.</span></h3>
-      <div class="body">
-        <p>The 12mm we're testing this month — two rounds of polish failed, round three is in hand. You'll see the prototypes before they ship, and the ones that never will.</p>
-      </div>
-    </div>
-  </div>
-
+  <!-- IMAGE SECTION · the prototype -->
   <div class="isec">
     <div class="figure">
       <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-12mm-chain-in-hand-with-box.jpg" alt="12mm prototype in hand" />
-      <span class="tag">The prototype</span>
+      <span class="tag">What you'll find</span>
     </div>
     <div class="inner">
-      <h3>The one we walked away from<span class="italic">at 80% complete.</span></h3>
+      <h3>The prototype we walked away from<span class="italic">at 80% complete.</span></h3>
       <div class="body">
         <p>The weight was right. The finish wasn't. Three rounds of polish failed inspection. <strong>We share the call, the cost, and what changed in the next sample.</strong></p>
       </div>
     </div>
   </div>
 
+  <!-- IMAGE SECTION · the clasp -->
   <div class="isec">
     <div class="figure">
       <img src="../balanzi-assets/product close-ups/Polished/polished-gold-chain-clasp-detail-macro.jpg" alt="Clasp detail · BALANZI" />
@@ -182,17 +166,14 @@
     </div>
   </div>
 
-  <div class="isec">
-    <div class="figure">
-      <img src="../balanzi-assets/BALANZI - Behind The Scenes/bts-busts-and-tray-setup-sideways.jpg" alt="Supplier trial setup" />
-      <span class="tag">The supplier</span>
-    </div>
-    <div class="inner">
-      <h3>The one we<span class="italic">stopped working with.</span></h3>
-      <div class="body">
-        <p>Six-month trial. Two missed deadlines. One QA dispute. The full record — so you know exactly what we hold a supplier to before a chain ever reaches you.</p>
-      </div>
-    </div>
+  <!-- TEXT SECTION · the rest, no images -->
+  <div class="letter" style="padding-top:28px; border-top:1px solid #E8E3DC;">
+    <div class="eyebrow">Also inside</div>
+    <ul class="specifics">
+      <li><strong>The chains we ship — and the ones we killed.</strong> <em>The 12mm in testing now: two rounds of polish failed, round three is in hand.</em></li>
+      <li><strong>The supplier we stopped working with.</strong> <em>Six-month trial. Two missed deadlines. One QA dispute. The full record.</em></li>
+      <li><strong>The questions we answer directly</strong> <em>before you'd think to ask them.</em></li>
+    </ul>
   </div>
 
   <!-- VOICE break -->
